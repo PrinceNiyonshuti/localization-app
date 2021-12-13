@@ -8,14 +8,13 @@
 - use context api on other functions [Fixed]
 - Making Protected Routes [Fixed]
 - use state without default data [Fixed]
+- handling google map data 
+- mapping each restaurant on google map
 
 ## Findings
 
 - React useEffect to handle data before data loads to the DOM and after it loads
-- using Json Server to hold data to be used while fetching them like an API
 - handling and mastering use of the state and conditional rendering
-- render by limits
-- concatinate script to watch json server and run app into single script
 - get data from api call and make a limit of data to retrieve
 
 # 2. Time Taken to Complete
