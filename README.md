@@ -60,6 +60,8 @@ before running the project first initialize the project to get tailwindcss modul
     REACT_APP_FIREBASE_STORAGE_BUCKET=
     REACT_APP_FIREBASE_MESSAGING_SENDER_ID=
     REACT_APP_FIREBASE_APP_ID=
+    REACT_APP_GOOGLE_KEY
+    REACT_RAPID_APP_API_KEY
 
 ### steps to follow installing the project
 
