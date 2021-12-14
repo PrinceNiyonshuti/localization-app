@@ -67,7 +67,7 @@ export interface IResto {
 			};
 		};
 		price: string;
-		awards: [award_type: string, year: number];
+		awards: [display_name: string, year: number];
 		rating: number;
 		ranking: string;
 		distance_string: string;

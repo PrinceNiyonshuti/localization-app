@@ -1,6 +1,5 @@
 /** @format */
 
-import { Link } from "react-router-dom";
 import { IResto } from "../context/Types";
 
 const Restaurant = (props: IResto) => {
@@ -31,8 +30,8 @@ const Restaurant = (props: IResto) => {
 							</div>
 							<div className="p-4 border-t border-b text-xs text-gray-700">
 								{place.awards?.map((award: any) => (
-									<p>
-										{award.award_type} - {award.year}
+									<p key={award.display_name}>
+										{award.display_name}
 									</p>
 								))}
 
@@ -67,7 +66,7 @@ const Restaurant = (props: IResto) => {
 							<div className="mx-3 my-1">
 								<span className="font-medium">Cousine :</span>
 								{place.cuisine?.map((cook: any) => (
-									<span className="inline-block px-2 py-1 mx-1 leading-none bg-blue-600 text-white rounded-full font-small tracking-wide text-sm">
+									<span key={cook.key} className="inline-block px-2 py-1 mx-1 leading-none bg-blue-600 text-white rounded-full font-small tracking-wide text-sm">
 										{cook.name}
 									</span>
 								))}

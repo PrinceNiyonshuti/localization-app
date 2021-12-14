@@ -5,14 +5,16 @@ import GoogleMapReact from "google-map-react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { demo, IResto } from "../context/Types";
-import { Marker } from "@react-google-maps/api";
 import resto from "../resto-icon.svg";
+import { url } from "inspector";
+import { Autocomplete } from "@react-google-maps/api";
 
 const AnyReactComponent = ({ text }: any) => <div>{text}</div>;
 
 function Dashboard() {
-	// const [places, SetPlaces] = useState<IResto["places"]>([]);
-	const [places, SetPlaces] = useState<any | null>(demo);
+	const [places, SetPlaces] = useState<IResto["places"]>([]);
+	// const [places, SetPlaces] = useState<any | null>(demo);
+	const [autocomplete, SetAutocomplete] = useState<any | null>(null);
 	const [coordinates, SetCoordinates] = useState<any | null>({});
 	const [bounds, SetBounds] = useState<any | null>({
 		ne: {
@@ -25,6 +27,15 @@ function Dashboard() {
 		},
 	});
 
+	const onLoad = (autoC: any) => {
+		SetAutocomplete(autoC);
+	};
+	const onPlaceChanged = () => {
+		const lat = autocomplete.getPlace().geometry.location.lat();
+		const lng = autocomplete.getPlace().geometry.location.lng();
+		SetCoordinates({ lat: lat, lng: lng });
+		console.log(lat, lng);
+	};
 	useEffect(() => {
 		navigator.geolocation.getCurrentPosition(
 			({ coords: { latitude, longitude } }) => {
@@ -33,42 +44,42 @@ function Dashboard() {
 		);
 	}, []);
 
-	// useEffect(() => {
-	// 	console.log(coordinates, bounds);
-	// 	getPlacesData(bounds.sw, bounds.ne).then((data) => {
-	// 		SetPlaces(data);
-	// 		console.log(data);
-	// 	});
-	// }, [coordinates, bounds]);
+	useEffect(() => {
+		console.log(coordinates, bounds);
+		getPlacesData(bounds.sw, bounds.ne).then((data) => {
+			SetPlaces(data);
+			console.log(data);
+		});
+	}, [coordinates, bounds]);
 
-	// // Places
-	// const URL =
-	// 	"https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary";
+	// Places
+	const URL =
+		"https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary";
 
-	// const getPlacesData = async (sw: any, ne: any) => {
-	// 	console.log(` New Bounds ${sw.lat} - ${ne.lat}`);
-	// 	try {
-	// 		const {
-	// 			data: { data },
-	// 		} = await axios.get(URL, {
-	// 			params: {
-	// 				bl_latitude: sw.lat,
-	// 				tr_latitude: ne.lat,
-	// 				bl_longitude: sw.lng,
-	// 				tr_longitude: ne.lng,
-	// 				limit: "5",
-	// 			},
-	// 			headers: {
-	// 				"x-rapidapi-host": "travel-advisor.p.rapidapi.com",
-	// 				"x-rapidapi-key":
-	// 					"c7ad9de5d2msh42c70d1195dd094p1aea80jsn7c1a7e219f11",
-	// 			},
-	// 		});
-	// 		return data;
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
-	// };
+	const getPlacesData = async (sw: any, ne: any) => {
+		console.log(` New Bounds ${sw.lat} - ${ne.lat}`);
+		try {
+			const {
+				data: { data },
+			} = await axios.get(URL, {
+				params: {
+					bl_latitude: sw.lat,
+					tr_latitude: ne.lat,
+					bl_longitude: sw.lng,
+					tr_longitude: ne.lng,
+					limit: "5",
+				},
+				headers: {
+					"x-rapidapi-host": "travel-advisor.p.rapidapi.com",
+					"x-rapidapi-key":
+						"c7ad9de5d2msh42c70d1195dd094p1aea80jsn7c1a7e219f11",
+				},
+			});
+			return data;
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	return (
 		<div className="h-screen bg-gray-100">
@@ -85,20 +96,13 @@ function Dashboard() {
 						</div>
 						<div className="p-2 flex items-center text-sm">
 							<div className="flex border-2 rounded">
-								<input
-									type="text"
-									className="px-4 py-2 w-80"
-									placeholder="Search City or Location ...."
-								/>
-								<button className="flex items-center justify-center px-4 border-l">
-									<svg
-										className="w-6 h-6 text-black"
-										fill="black"
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 24 24">
-										<path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-									</svg>
-								</button>
+								<Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+									<input
+										type="text"
+										className="px-4 py-2 w-80"
+										placeholder="Search City or Location ...."
+									/>
+								</Autocomplete>
 							</div>
 						</div>
 						<div className="p-2 pr-4 flex items-center text-sm">
@@ -148,31 +152,49 @@ function Dashboard() {
 												ne: e.marginBounds.ne,
 												sw: e.marginBounds.sw,
 											});
-											console.log(bounds);
 										}}
-										onChildClick={(e) => {}}>
-										{places?.map((place: any) => (
-											// <Marker
-											// 	key={place.location_id}
-											// 	position={{
-											// 		lat: Number(place.latitude),
-											// 		lng: Number(place.longitude),
-											// 	}}
-											// 	icon={{
-											// 		url: resto,
-											// 		origin: new window.google.maps.Point(0, 0),
-											// 		anchor: new window.google.maps.Point(15, 15),
-											// 		// scaledSize: new window.google.maps.Size(30, 30),
-											// 	}}
-											// />
+										onChildClick={(child) => {
+											alert(`Clicked `);
+										}}>
+										{coordinates ? (
+											places?.map((place: any) => (
+												<AnyReactComponent
+													key={place.location_id}
+													lat={
+														place?.latitude
+															? Number(place.latitude)
+															: coordinates.lat
+													}
+													lng={
+														place?.longitude
+															? Number(place.longitude)
+															: coordinates.lng
+													}
+													// lng={coordinates.lng}
+													// position={coordinates}
+													text={
+														<div className=" inline-block py-1 leading-none rounded font-semibold  text-xs">
+															<p className="bg-white rounded w-full">
+																{place.name}
+															</p>
+															<div className=" relative pb-48 overflow-hidden">
+																<img
+																	className=" bg-white rounded shadow-lg absolute inset-0 h-8 w-12 object-cover"
+																	src={place.photo?.images?.large?.url}
+																	alt=""
+																/>
+															</div>
+														</div>
+													}
+												/>
+											))
+										) : (
 											<AnyReactComponent
-												key={place.location_id}
-												lat={Number(place.latitude)}
-												lng={place.longitude}
-												text={place.name}
-												className={"bg-blue-800"}
+												key="Marker 1"
+												position={coordinates}
+												text={<img src={"/logo.png"} className="h-4" />}
 											/>
-										))}
+										)}
 									</GoogleMapReact>
 								) : (
 									<p>Still Loading ...</p>
