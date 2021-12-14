@@ -4,9 +4,7 @@ import Restaurant from "../components/Restaurant";
 import GoogleMapReact from "google-map-react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { demo, IResto } from "../context/Types";
-import resto from "../resto-icon.svg";
-import { url } from "inspector";
+import { IResto } from "../context/Types";
 import { Autocomplete } from "@react-google-maps/api";
 
 const AnyReactComponent = ({ text }: any) => <div>{text}</div>;
@@ -195,7 +193,7 @@ function Dashboard() {
 											<AnyReactComponent
 												key="Marker 1"
 												position={coordinates}
-												text={<img src={"/logo.png"} className="h-4" />}
+												text={<img src={"/icon.png"} className="h-4" alt="" />}
 											/>
 										)}
 									</GoogleMapReact>

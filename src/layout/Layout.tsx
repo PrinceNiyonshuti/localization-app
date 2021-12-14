@@ -3,7 +3,6 @@
 import React, { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
-import Favorite from "../pages/Favorite";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { AuthContext } from "../context/AuthContext";
@@ -28,10 +27,6 @@ function Layout() {
 				<Route
 					path="/Settings"
 					element={<PrivateRoutes component={Settings} />}
-				/>
-				<Route
-					path="/Favorite"
-					element={<PrivateRoutes component={Favorite} />}
 				/>
 			</Routes>
 		</div>

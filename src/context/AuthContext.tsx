@@ -3,7 +3,6 @@
 import { createContext, useEffect, useState } from "react";
 import { AuthContextState } from "./Types";
 import { auth } from "../firebase";
-import Swal from "sweetalert2";
 
 const contextDefaultValue: AuthContextState = {
 	currentUser: "",

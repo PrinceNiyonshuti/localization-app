@@ -8,7 +8,7 @@
 - use context api on other functions [Fixed]
 - Making Protected Routes [Fixed]
 - use state without default data [Fixed]
-- handling google map data 
+- handling google map data
 - mapping each restaurant on google map
 
 ## Findings
@@ -16,6 +16,8 @@
 - React useEffect to handle data before data loads to the DOM and after it loads
 - handling and mastering use of the state and conditional rendering
 - get data from api call and make a limit of data to retrieve
+- Google Map API and Autocomplete Features
+- Google Map Marker
 
 # 2. Time Taken to Complete
 
@@ -26,32 +28,39 @@
 - the coding style is used was line coding and error control and
   the standard of using safe ,secure and portable codes
 
-# 4. Source code files 
+# 4. Source code files
 
 [Link To Repository](https://github.com/PrinceNiyonshuti/localization-app.git)
 
 [Link To Deployed App]()
 
-# 5. Documentation 
+# 5. Documentation
 
 before running the project first initialize the project to get tailwindcss modules , using the steps below
 
 ### Requiments
- 
-#### install typescript 
+
+#### install typescript
+
     npm install -g typescript
+
 #### create firebase account
+
 #### create app and get the api keys
+
 #### create enviroment variable called
+
     .env.local
+
 #### in .env.local add corresponding data from firebase
+
     REACT_APP_FIREBASE_API_KEY=
     REACT_APP_FIREBASE_AUTH_DOMAIN=
     REACT_APP_FIREBASE_PROJECT_ID=
     REACT_APP_FIREBASE_STORAGE_BUCKET=
     REACT_APP_FIREBASE_MESSAGING_SENDER_ID=
     REACT_APP_FIREBASE_APP_ID=
-    
+
 ### steps to follow installing the project
 
 #### Clone the repository run
@@ -77,7 +86,26 @@ before running the project first initialize the project to get tailwindcss modul
 - Concurrently
 - React-google-maps/api
 
-## Documentation and requirements 
+## Documentation and requirements
+
 ### To Run the app use
 
     1. npm run start
+
+## Screenshoots
+
+### Login Page
+
+![Mobile Devices](https://github.com/PrinceNiyonshuti/localization-app/blob/main/screenshoots/Login-Resto.png)
+
+### Register Page
+
+![Tablet Devices](https://github.com/PrinceNiyonshuti/localization-appblob/main/screenshoots/Register-Resto.png)
+
+### Dashboard
+
+![Laptop Devices](https://github.com/PrinceNiyonshuti/localization-app/blob/main/screenshoots/Dashboard.png)
+
+### Dashboard with Auto Complete
+
+![Laptop Devices](https://github.com/PrinceNiyonshuti/localization-app/blob/main/screenshoots/Dash - 02.png)
