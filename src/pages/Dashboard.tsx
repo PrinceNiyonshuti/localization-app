@@ -48,8 +48,6 @@ function Dashboard() {
 			SetPlaces(
 				data.filter((place: any) => place.name && place.num_reviews > 0)
 			);
-			// SetPlaces(data);
-			console.log(data);
 		});
 	}, [coordinates, bounds]);
 
@@ -58,7 +56,6 @@ function Dashboard() {
 		"https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary";
 
 	const getPlacesData = async (sw: any, ne: any) => {
-		console.log(` New Bounds ${sw.lat} - ${ne.lat}`);
 		try {
 			const {
 				data: { data },
@@ -134,9 +131,6 @@ function Dashboard() {
 							</div>
 
 							<div className="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-full md:my-1 md:px-1 md:w-2/3 lg:my-1 lg:px-1 lg:w-2/3 xl:my-1 xl:px-1 xl:w-2/3">
-								{/* <div className="hero container max-w-screen-lg mx-auto pb-10">
-									sads
-								</div> */}
 								{bounds ? (
 									<GoogleMapReact
 										bootstrapURLKeys={{
@@ -171,8 +165,6 @@ function Dashboard() {
 															? Number(place.longitude)
 															: coordinates.lng
 													}
-													// lng={coordinates.lng}
-													// position={coordinates}
 													text={
 														<div className=" inline-block py-1 leading-none rounded font-semibold  text-xs">
 															<p className="bg-white rounded w-full">
