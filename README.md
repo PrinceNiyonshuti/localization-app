@@ -100,7 +100,7 @@ before running the project first initialize the project to get tailwindcss modul
 
 ### Register Page
 
-![Register](https://github.com/PrinceNiyonshuti/localization-appblob/master/screenshoots/Register-Resto.png)
+![Register](https://github.com/PrinceNiyonshuti/localization-app/blob/master/screenshoots/Register-Resto.png)
 
 ### Dashboard
 
