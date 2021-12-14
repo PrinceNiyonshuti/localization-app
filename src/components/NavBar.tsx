@@ -65,11 +65,6 @@ function NavBar() {
 									className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">
 									Home
 								</Link>
-								<Link
-									to="/Favorite"
-									className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-									Favorite
-								</Link>
 							</div>
 						</div>
 					</div>
@@ -122,11 +117,6 @@ function NavBar() {
 						to="/Dashboard"
 						className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">
 						Home
-					</Link>
-					<Link
-						to="/Favorite"
-						className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-						Favorite
 					</Link>
 				</div>
 			</div>

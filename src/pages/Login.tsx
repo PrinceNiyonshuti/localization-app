@@ -45,17 +45,17 @@ function Login() {
 					<div className="h-32 md:h-auto md:w-1/2">
 						<img
 							className="object-cover w-full h-full"
-							src="/bg.jpg"
-							alt="Movie App Background"
+							src="/bg.png"
+							alt="Localizaion App Background"
 						/>
 					</div>
 					<div className="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
 						<div className="w-full">
 							<div className="flex justify-center">
 								<img
-									className="object-cover w-1/4 h-1/4"
-									src="/logo.png"
-									alt="Movie App Logo"
+									className="object-cover w-2/4 h-2/4"
+									src="/icon.png"
+									alt="Localizaion App Logo"
 								/>
 							</div>
 							<h1 className="mb-4 text-2xl font-bold text-center text-gray-700">

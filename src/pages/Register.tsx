@@ -62,7 +62,7 @@ function Register() {
 					<div className="h-32 md:h-auto md:w-1/2">
 						<img
 							className="object-cover w-full h-full"
-							src="/bg.jpg"
+							src="/bg.png"
 							alt="Movie App Background"
 						/>
 					</div>
@@ -70,8 +70,8 @@ function Register() {
 						<div className="w-full">
 							<div className="flex justify-center">
 								<img
-									className="object-cover w-1/4 h-1/4"
-									src="/logo.png"
+									className="object-cover w-2/4 h-2/4"
+									src="/icon.png"
 									alt="Movie App Logo"
 								/>
 							</div>

@@ -47,7 +47,10 @@ function Dashboard() {
 	useEffect(() => {
 		console.log(coordinates, bounds);
 		getPlacesData(bounds.sw, bounds.ne).then((data) => {
-			SetPlaces(data);
+			SetPlaces(
+				data.filter((place: any) => place.name && place.num_reviews > 0)
+			);
+			// SetPlaces(data);
 			console.log(data);
 		});
 	}, [coordinates, bounds]);
@@ -67,12 +70,12 @@ function Dashboard() {
 					tr_latitude: ne.lat,
 					bl_longitude: sw.lng,
 					tr_longitude: ne.lng,
-					limit: "5",
+					limit: "30",
 				},
 				headers: {
 					"x-rapidapi-host": "travel-advisor.p.rapidapi.com",
 					"x-rapidapi-key":
-						"c7ad9de5d2msh42c70d1195dd094p1aea80jsn7c1a7e219f11",
+						"196ddb6ff2msh116759ffc5982dbp1ecbb0jsn3b40cd186887",
 				},
 			});
 			return data;
