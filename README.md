@@ -96,16 +96,16 @@ before running the project first initialize the project to get tailwindcss modul
 
 ### Login Page
 
-![Mobile Devices](https://github.com/PrinceNiyonshuti/localization-app/blob/main/screenshoots/Login-Resto.png)
+![Login](https://github.com/PrinceNiyonshuti/localization-app/blob/master/screenshoots/Login-Resto.png)
 
 ### Register Page
 
-![Tablet Devices](https://github.com/PrinceNiyonshuti/localization-appblob/main/screenshoots/Register-Resto.png)
+![Register](https://github.com/PrinceNiyonshuti/localization-appblob/master/screenshoots/Register-Resto.png)
 
 ### Dashboard
 
-![Laptop Devices](https://github.com/PrinceNiyonshuti/localization-app/blob/main/screenshoots/Dashboard.png)
+![Dashboard](https://github.com/PrinceNiyonshuti/localization-app/blob/master/screenshoots/Dashboard.png)
 
 ### Dashboard with Auto Complete
 
-![Laptop Devices](https://github.com/PrinceNiyonshuti/localization-app/blob/main/screenshoots/Dash - 02.png)
+![Dashboard Search](https://github.com/PrinceNiyonshuti/localization-app/blob/master/screenshoots/Dash_02.png)
