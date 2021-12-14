@@ -104,8 +104,8 @@ before running the project first initialize the project to get tailwindcss modul
 
 ### Dashboard
 
-![Dashboard](https://github.com/PrinceNiyonshuti/localization-app/blob/master/screenshoots/Dashboard.png)
+![Dashboard](https://github.com/PrinceNiyonshuti/localization-app/blob/master/screenshoots/Dash_02.png)
 
 ### Dashboard with Auto Complete
 
-![Dashboard Search](https://github.com/PrinceNiyonshuti/localization-app/blob/master/screenshoots/Dash_02.png)
+![Dashboard Search](https://github.com/PrinceNiyonshuti/localization-app/blob/master/screenshoots/Dashboard.png)
