@@ -134,7 +134,7 @@ function Dashboard() {
 								{bounds ? (
 									<GoogleMapReact
 										bootstrapURLKeys={{
-											key: "AIzaSyAjsvJXVS0ZEdKz4CH8iyYjzmrvOmps2zo",
+											key: process.env.REACT_APP_GOOGLE_KEY!,
 										}}
 										defaultCenter={coordinates}
 										center={coordinates}
