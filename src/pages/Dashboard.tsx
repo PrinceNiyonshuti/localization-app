@@ -4,7 +4,7 @@ import Restaurant from "../components/Restaurant";
 import GoogleMapReact from "google-map-react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { IResto } from "../context/Types";
+import { IResto, demo } from "../context/Types";
 import { Autocomplete } from "@react-google-maps/api";
 
 const AnyReactComponent = ({ text }: any) => <div>{text}</div>;
@@ -14,16 +14,7 @@ function Dashboard() {
 	// const [places, SetPlaces] = useState<any | null>(demo);
 	const [autocomplete, SetAutocomplete] = useState<any | null>(null);
 	const [coordinates, SetCoordinates] = useState<any | null>({});
-	const [bounds, SetBounds] = useState<any | null>({
-		ne: {
-			lat: -1.9529727411044604,
-			lng: 30.100878570544438,
-		},
-		sw: {
-			lat: -1.9857406977979224,
-			lng: 30.05461582945557,
-		},
-	});
+	const [bounds, SetBounds] = useState<any | null>({});
 
 	const onLoad = (autoC: any) => {
 		SetAutocomplete(autoC);
@@ -32,8 +23,16 @@ function Dashboard() {
 		const lat = autocomplete.getPlace().geometry.location.lat();
 		const lng = autocomplete.getPlace().geometry.location.lng();
 		SetCoordinates({ lat: lat, lng: lng });
-		console.log(lat, lng);
 	};
+
+	const useMyLocation = () => {
+		navigator.geolocation.getCurrentPosition(
+			({ coords: { latitude, longitude } }) => {
+				SetCoordinates({ lat: latitude, lng: longitude });
+			}
+		);
+	};
+
 	useEffect(() => {
 		navigator.geolocation.getCurrentPosition(
 			({ coords: { latitude, longitude } }) => {
@@ -43,13 +42,14 @@ function Dashboard() {
 	}, []);
 
 	useEffect(() => {
-		console.log(coordinates, bounds);
-		getPlacesData(bounds.sw, bounds.ne).then((data) => {
-			SetPlaces(
-				data.filter((place: any) => place.name && place.num_reviews > 0)
-			);
-		});
-	}, [coordinates, bounds]);
+		if (bounds) {
+			getPlacesData(bounds.sw, bounds.ne).then((data) => {
+				SetPlaces(
+					data?.filter((place: any) => place.name && place.num_reviews > 0)
+				);
+			});
+		}
+	}, [bounds]);
 
 	// Places
 	const URL =
@@ -70,7 +70,7 @@ function Dashboard() {
 				headers: {
 					"x-rapidapi-host": "travel-advisor.p.rapidapi.com",
 					"x-rapidapi-key":
-						"196ddb6ff2msh116759ffc5982dbp1ecbb0jsn3b40cd186887",
+						"d39137d481msh105a1a3863d985cp1fdf9djsn706cf10395d1",
 				},
 			});
 			return data;
@@ -105,7 +105,9 @@ function Dashboard() {
 						</div>
 						<div className="p-2 pr-4 flex items-center text-sm">
 							<div className="float-right mt-2">
-								<button className=" float-right px-4 py-2 inline-flex items-center text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600">
+								<button
+									onClick={useMyLocation}
+									className=" float-right px-4 py-2 inline-flex items-center text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600">
 									<img
 										src="/current-location.svg"
 										className="h-5 mx-2"
@@ -131,7 +133,7 @@ function Dashboard() {
 							</div>
 
 							<div className="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-full md:my-1 md:px-1 md:w-2/3 lg:my-1 lg:px-1 lg:w-2/3 xl:my-1 xl:px-1 xl:w-2/3">
-								{bounds ? (
+								{coordinates ? (
 									<GoogleMapReact
 										bootstrapURLKeys={{
 											key: process.env.REACT_APP_GOOGLE_KEY!,
@@ -140,7 +142,6 @@ function Dashboard() {
 										center={coordinates}
 										defaultZoom={14}
 										margin={[50, 50, 50, 50]}
-										options={{}}
 										onChange={(e) => {
 											SetCoordinates({ lat: e.center.lat, lng: e.center.lng });
 											SetBounds({
@@ -151,7 +152,7 @@ function Dashboard() {
 										onChildClick={(child) => {
 											alert(`Clicked `);
 										}}>
-										{coordinates ? (
+										{bounds ? (
 											places?.map((place: any) => (
 												<AnyReactComponent
 													key={place.location_id}

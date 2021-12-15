@@ -1,10 +1,20 @@
 /** @format */
 
+import Swal from "sweetalert2";
 import { IResto } from "../context/Types";
 
 const Restaurant = (props: IResto) => {
-	console.log(props.places);
 	const data = props.places;
+	const getDirections = () => {
+		Swal.fire({
+			title: "Oops !",
+			icon: "warning",
+			text: "Get directions not yet implemented",
+			timer: 2000,
+			showConfirmButton: false,
+		});
+	};
+
 	return (
 		<div>
 			{data ? (
@@ -14,12 +24,14 @@ const Restaurant = (props: IResto) => {
 							<div className="relative pb-48 overflow-hidden">
 								<img
 									className="absolute inset-0 h-full w-full object-cover"
-									src={place.photo?.images?.large?.url}
+									src={place?.photo?.images?.large?.url}
 									alt=""
 								/>
 							</div>
 							<div className="p-4">
-								<span className="inline-block px-2 py-1 leading-none bg-blue-600 text-white rounded-full font-semibold uppercase tracking-wide text-xs">
+								<span
+									onClick={getDirections}
+									className="inline-block cursor-pointer px-2 py-1 leading-none bg-blue-600 text-white rounded-full font-semibold uppercase tracking-wide text-xs">
 									Get Directions
 								</span>
 								<h2 className="mt-2 mb-2  font-bold">{place.name}</h2>
@@ -30,9 +42,7 @@ const Restaurant = (props: IResto) => {
 							</div>
 							<div className="p-4 border-t border-b text-xs text-gray-700">
 								{place.awards?.map((award: any) => (
-									<p key={award.display_name}>
-										{award.display_name}
-									</p>
+									<p key={award.display_name}>{award.display_name}</p>
 								))}
 
 								<span className="flex items-center mb-1 mt-2 font-bold">
@@ -66,7 +76,9 @@ const Restaurant = (props: IResto) => {
 							<div className="mx-3 my-1">
 								<span className="font-medium">Cousine :</span>
 								{place.cuisine?.map((cook: any) => (
-									<span key={cook.key} className="inline-block px-2 py-1 mx-1 leading-none bg-blue-600 text-white rounded-full font-small tracking-wide text-sm">
+									<span
+										key={cook.key}
+										className="inline-block px-2 py-1 mx-1 leading-none bg-blue-600 text-white rounded-full font-small tracking-wide text-sm">
 										{cook.name}
 									</span>
 								))}

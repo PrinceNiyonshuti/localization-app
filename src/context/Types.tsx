@@ -2891,39 +2891,6 @@ export const demo = [
         ]
     },
     {
-        "location_id": "293829",
-        "ad_position": "inline2",
-        "ad_size": "8X8",
-        "doubleclick_zone": "af.rwanda",
-        "ancestors": [
-            {
-                "subcategory": [
-                    {
-                        "key": "district",
-                        "name": "District"
-                    }
-                ],
-                "name": "Kigali Province",
-                "abbrv": null,
-                "location_id": "3685406"
-            },
-            {
-                "subcategory": [
-                    {
-                        "key": "country",
-                        "name": "Country"
-                    }
-                ],
-                "name": "Rwanda",
-                "abbrv": null,
-                "location_id": "293828"
-            }
-        ],
-        "detail": "0",
-        "page_type": "restaurants",
-        "mob_ptype": "app_restaurants"
-    },
-    {
         "location_id": "15666049",
         "name": "Lavana",
         "latitude": "-1.959851",
