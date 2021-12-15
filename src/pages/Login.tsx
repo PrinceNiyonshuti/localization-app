@@ -15,6 +15,7 @@ function Login() {
 
 	const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		console.log("Form Submitted");
 
 		const email = emailRef.current?.value;
 		const password = passwordRef.current?.value;
@@ -38,6 +39,10 @@ function Login() {
 			});
 		}
 	};
+
+	const handleClick = () => {
+		console.log("Button Clicked");
+	};
 	return (
 		<div className="flex items-center min-h-screen bg-gray-50">
 			<div className="flex-1 h-full max-w-4xl mx-auto bg-white rounded-lg shadow-xl">
@@ -58,10 +63,12 @@ function Login() {
 									alt="Localizaion App Logo"
 								/>
 							</div>
-							<h1 className="mb-4 text-2xl font-bold text-center text-gray-700">
+							<h1
+								data-test="loginHeader"
+								className="mb-4 text-2xl font-bold text-center text-gray-700">
 								Login {currentUser && currentUser.email}
 							</h1>
-							<form onSubmit={handleLogin}>
+							<form data-test="loginForm" onSubmit={handleLogin}>
 								<div>
 									<label className="block text-sm">Email</label>
 									<input
@@ -84,7 +91,9 @@ function Login() {
 										required
 									/>
 								</div>
-								<button className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
+								<button
+									onClick={handleClick}
+									className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
 									Log in
 								</button>
 							</form>
