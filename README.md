@@ -10,6 +10,7 @@
 - use state without default data [Fixed]
 - handling google map data
 - mapping each restaurant on google map
+- Make test of form submit
 
 ## Findings
 
@@ -18,6 +19,8 @@
 - get data from api call and make a limit of data to retrieve
 - Google Map API and Autocomplete Features
 - Google Map Marker
+- Button simulation in testing
+- checking if the component has all needed inputs,form ,button ...
 
 # 2. Time Taken to Complete
 
@@ -87,6 +90,8 @@ before running the project first initialize the project to get tailwindcss modul
 - SweetAlert2
 - Concurrently
 - React-google-maps/api
+- Enzyme 
+- Jesy
 
 ## Documentation and requirements
 

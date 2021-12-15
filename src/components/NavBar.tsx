@@ -48,12 +48,12 @@ function NavBar() {
 							<Link to="/Dashboard">
 								<img
 									className="block lg:hidden h-8 w-auto"
-									src="/current-location.svg"
+									src="/icon.png"
 									alt="Restaurant App"
 								/>
 								<img
 									className="hidden lg:block h-8 w-auto"
-									src="/current-location.svg"
+									src="/icon.png"
 									alt="Restaurant App"
 								/>
 							</Link>
