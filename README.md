@@ -8,8 +8,8 @@
 - use context api on other functions [Fixed]
 - Making Protected Routes [Fixed]
 - use state without default data [Fixed]
-- handling google map data
-- mapping each restaurant on google map
+- handling google map data [Fixed]
+- mapping each restaurant on google map [Fixed]
 - Make test of form submit
 
 ## Findings
@@ -86,12 +86,13 @@ before running the project first initialize the project to get tailwindcss modul
 
 - Typescript
 - React Router Dom
+- TailwindCss
 - Firebase
 - SweetAlert2
 - Concurrently
 - React-google-maps/api
 - Enzyme 
-- Jesy
+- Jest
 
 ## Documentation and requirements
 
