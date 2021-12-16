@@ -20,7 +20,7 @@ import { BrowserRouter } from "react-router-dom";
 
 configure({ adapter: new Adapter() });
 
-describe("rendering components", () => {
+describe("Rendering components", () => {
 	it("renders App component without crashing", () => {
 		shallow(<App />);
 	});
@@ -50,7 +50,7 @@ describe("rendering components", () => {
 	});
 });
 
-describe("login component", () => {
+describe("Login component", () => {
 	let container: HTMLDivElement;
 
 	beforeEach(() => {

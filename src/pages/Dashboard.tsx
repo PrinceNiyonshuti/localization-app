@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { IResto, demo } from "../context/Types";
 import { Autocomplete } from "@react-google-maps/api";
 
-const AnyReactComponent = ({ text }: any) => <div>{text}</div>;
+const AnyReactComponent = ({ content }: any) => <div>{content}</div>;
 
 function Dashboard() {
 	const [places, SetPlaces] = useState<IResto["places"]>([]);
@@ -69,6 +69,7 @@ function Dashboard() {
 				},
 				headers: {
 					"x-rapidapi-host": "travel-advisor.p.rapidapi.com",
+					// "x-rapidapi-key": process.env.REACT_RAPID_APP_API_KEY!,
 					"x-rapidapi-key":
 						"d39137d481msh105a1a3863d985cp1fdf9djsn706cf10395d1",
 				},
@@ -166,7 +167,7 @@ function Dashboard() {
 															? Number(place.longitude)
 															: coordinates.lng
 													}
-													text={
+													content={
 														<div className=" inline-block py-1 leading-none rounded font-semibold  text-xs">
 															<p className="bg-white rounded w-full">
 																{place.name}
@@ -186,7 +187,9 @@ function Dashboard() {
 											<AnyReactComponent
 												key="Marker 1"
 												position={coordinates}
-												text={<img src={"/icon.png"} className="h-4" alt="" />}
+												content={
+													<img src={"/icon.png"} className="h-4" alt="" />
+												}
 											/>
 										)}
 									</GoogleMapReact>
