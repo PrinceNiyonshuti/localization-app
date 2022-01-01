@@ -19,12 +19,13 @@
 - get data from api call and make a limit of data to retrieve
 - Google Map API and Autocomplete Features
 - Google Map Marker
+- unit testing
 - Button simulation in testing
 - checking if the component has all needed inputs,form ,button ...
 
 # 2. Time Taken to Complete
 
-- The project took me 6 hours
+- The project took 6 hours
 
 # 3. Coding style and standards
 
@@ -39,7 +40,8 @@
 
 # 5. Documentation
 
-before running the project first initialize the project to get tailwindcss modules , using the steps below
+before starting to run the project , make sure you have Firebase account, Rapid account to get API keys 
+and Google Map API
 
 ### Requiments
 
@@ -63,8 +65,8 @@ before running the project first initialize the project to get tailwindcss modul
     REACT_APP_FIREBASE_STORAGE_BUCKET=
     REACT_APP_FIREBASE_MESSAGING_SENDER_ID=
     REACT_APP_FIREBASE_APP_ID=
-    REACT_APP_GOOGLE_KEY
-    REACT_RAPID_APP_API_KEY
+    REACT_APP_GOOGLE_KEY=
+    REACT_RAPID_APP_API_KEY=
 
 ### steps to follow installing the project
 

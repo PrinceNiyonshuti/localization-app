@@ -69,9 +69,8 @@ function Dashboard() {
 				},
 				headers: {
 					"x-rapidapi-host": "travel-advisor.p.rapidapi.com",
-					// "x-rapidapi-key": process.env.REACT_RAPID_APP_API_KEY!,
-					"x-rapidapi-key":
-						"d39137d481msh105a1a3863d985cp1fdf9djsn706cf10395d1",
+					"x-rapidapi-key": process.env.REACT_RAPID_APP_API_KEY,
+					// "x-rapidapi-key":"d39137d481msh105a1a3863d985cp1fdf9djsn706cf10395d1",
 				},
 			});
 			return data;

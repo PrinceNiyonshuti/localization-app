@@ -50,7 +50,7 @@ describe("Rendering components", () => {
 	});
 });
 
-describe("Login component", () => {
+describe("Login component screen", () => {
 	let container: HTMLDivElement;
 
 	beforeEach(() => {
