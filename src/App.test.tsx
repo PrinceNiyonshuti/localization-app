@@ -13,7 +13,7 @@ import Layout from "./layout/Layout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
-import { shallow, mount } from "enzyme";
+import { shallow, } from "enzyme";
 import { configure } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import { BrowserRouter } from "react-router-dom";
