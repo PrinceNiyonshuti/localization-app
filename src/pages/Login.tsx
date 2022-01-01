@@ -23,7 +23,7 @@ function Login() {
 		try {
 			await login(`${email}`, `${password}`);
 			Swal.fire({
-				title: "Logged In",
+				title: "Logged In Successfully",
 				icon: "success",
 				timer: 2000,
 				showConfirmButton: false,
