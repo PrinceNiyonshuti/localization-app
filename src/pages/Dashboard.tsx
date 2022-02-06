@@ -4,14 +4,13 @@ import Restaurant from "../components/Restaurant";
 import GoogleMapReact from "google-map-react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { IResto, demo } from "../context/Types";
+import { IResto } from "../context/Types";
 import { Autocomplete } from "@react-google-maps/api";
 
 const AnyReactComponent = ({ content }: any) => <div>{content}</div>;
 
 function Dashboard() {
 	const [places, SetPlaces] = useState<IResto["places"]>([]);
-	// const [places, SetPlaces] = useState<any | null>(demo);
 	const [autocomplete, SetAutocomplete] = useState<any | null>(null);
 	const [coordinates, SetCoordinates] = useState<any | null>({});
 	const [bounds, SetBounds] = useState<any | null>({});
@@ -70,7 +69,8 @@ function Dashboard() {
 				headers: {
 					"x-rapidapi-host": "travel-advisor.p.rapidapi.com",
 					// "x-rapidapi-key": process.env.REACT_RAPID_APP_API_KEY,
-					"x-rapidapi-key":"d39137d481msh105a1a3863d985cp1fdf9djsn706cf10395d1",
+					"x-rapidapi-key":
+						"d39137d481msh105a1a3863d985cp1fdf9djsn706cf10395d1",
 				},
 			});
 			return data;
