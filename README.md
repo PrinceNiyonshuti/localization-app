@@ -119,3 +119,7 @@ and Google Map API
 ### Dashboard with Auto Complete
 
 ![Dashboard Search](https://github.com/PrinceNiyonshuti/localization-app/blob/master/screenshoots/Dashboard.png)
+
+## Feedback and issues
+
+Any issue and feedback from the app don't hesitate to make an issue
