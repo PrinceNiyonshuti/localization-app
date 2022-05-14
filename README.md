@@ -1,5 +1,6 @@
 # Localization App
 
+Localization App, it use Google Map API to show Restaurants on the map and Firebase for Authentication and Authorization
 
 # 1. Problems and findings
 
