@@ -38,8 +38,6 @@ Localization App, it use Google Map API to show Restaurants on the map and Fireb
 
 [Link To Repository](https://github.com/PrinceNiyonshuti/localization-app.git)
 
-[Link To Deployed App]()
-
 # 5. Documentation
 
 before starting to run the project , make sure you have Firebase account, Rapid account to get API keys 
